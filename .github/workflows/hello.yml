@@ -9,6 +9,12 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo hello world
+      - name: Run echo hello world
         run: |
           echo "hello world"
+      - name: Run date
+        run: |
+          date
+      - name: Run ls
+        run: |
+          ls -l
