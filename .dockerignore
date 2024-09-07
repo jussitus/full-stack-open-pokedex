@@ -1,0 +1,7 @@
+node_modules/
+exercise1.md
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+full-stack-open-pokedex.code-workspace
