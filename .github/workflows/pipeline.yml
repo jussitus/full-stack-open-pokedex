@@ -1,4 +1,6 @@
 name: Deployment pipeline
+env:
+  SKIP: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
 
 on:
   push:
@@ -34,13 +36,13 @@ jobs:
         run: npm run test:e2e
         
       - name: Run Fly deploy
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && env.SKIP == 'false' }}
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
   tag_release:
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && github.env.SKIP == 'false'}}
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
