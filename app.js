@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('ex13') // change this string to ensure a new version deployed
+  res.send('ex15') // change this string to ensure a new version deployed
 })
 
 app.get('/health', (req, res) => {
