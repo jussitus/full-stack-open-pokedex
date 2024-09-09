@@ -55,7 +55,7 @@ jobs:
         uses: Ilshidur/action-discord@0.3.2
         if: failure()
         with:
-             args: 'Build fialure: {{ EVENT_PAYLOAD.repository.full_name }}'
+             args: 'Build failure: {{ EVENT_PAYLOAD.repository.full_name }}'
 
   tag_release:
     needs: [simple_deployment_pipeline]
