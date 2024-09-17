@@ -16,5 +16,6 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/health', (req, res) => {
-  res.send('ok')
+  res.sendStatus(400)
+  //res.send('ok')
 })
