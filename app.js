@@ -20,5 +20,5 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/health-workflow', (req, res) => {
-  res.sendStatus(400)
+  res.send('ok')
 })
